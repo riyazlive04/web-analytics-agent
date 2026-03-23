@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/((?!assets|agent-sims\\.html|favicon|robots|placeholder).*)", "destination": "/index.html" }
+  ]
+}
