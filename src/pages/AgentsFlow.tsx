@@ -5,7 +5,7 @@ import {
   RefreshCw, Sparkles, Rocket, ArrowLeft, Bot, ArrowRight,
   CheckCircle2, X, ChevronRight, AlertCircle, Loader2,
   Search, FileCode, TrendingUp, ShieldCheck, Lock, Unlock,
-  MonitorCheck, Eye, Zap, MousePointerClick,
+  MonitorCheck, Eye, Zap, MousePointerClick, SlidersHorizontal, UserCheck,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
@@ -525,9 +525,43 @@ const AgentsFlow = () => {
           })}
         </div>
 
-        {/* Footer — Serial Position Effect: memorable end */}
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.6}} className="text-center mt-14 pb-8">
-          <span className="text-[10px] text-muted-foreground font-medium tracking-wide">Powered by Sirah Digital</span>
+        {/* Human-in-the-loop trust banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="mt-12 mx-auto max-w-xl"
+        >
+          <div className="relative rounded-2xl border border-primary/15 bg-gradient-to-r from-primary/5 via-primary/3 to-primary/5 p-5 overflow-hidden">
+            {/* Animated shimmer */}
+            <motion.div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: "linear-gradient(90deg, transparent 0%, hsl(181 69% 35% / 0.06) 50%, transparent 100%)", backgroundSize: "200% 100%" }}
+              animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            />
+            <div className="relative z-10 flex items-center gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <SlidersHorizontal className="w-5 h-5 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-bold text-heading">Human-in-the-Loop Controls</span>
+                  <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary/8 border border-primary/15 text-[8px] font-bold text-primary tracking-wider">
+                    <UserCheck className="w-2.5 h-2.5" /> CONFIGURABLE
+                  </span>
+                </div>
+                <p className="text-[11px] text-sub leading-relaxed">
+                  Automation levels can be configured with human-in-the-loop controls — every agent supports manual review, approval gates, and adjustable autonomy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Footer */}
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.6}} className="text-center mt-10 pb-8">
+          <span className="text-[10px] text-muted-foreground font-medium tracking-wide">Powered by Sirah Digital AI Architecture</span>
         </motion.div>
       </div>
 
