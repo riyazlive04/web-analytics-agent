@@ -254,15 +254,25 @@ const Index = () => {
                 <p className="text-muted-foreground text-sm mt-2 flex items-center justify-center gap-1">
                   Click any component to explore its workflow <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
                 </p>
-                <motion.button
+                <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  onClick={() => navigate("/demo-flow")}
-                  className="mt-3 inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-primary/10 border border-primary/20 text-sm font-semibold text-primary hover:bg-primary/15 transition-colors duration-200"
+                  className="mt-3 flex flex-wrap items-center justify-center gap-2"
                 >
-                  <Bot className="w-4 h-4" /> Watch AI Workflow Demo
-                </motion.button>
+                  <button
+                    onClick={() => navigate("/demo-flow")}
+                    className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-primary/10 border border-primary/20 text-sm font-semibold text-primary hover:bg-primary/15 transition-colors duration-200"
+                  >
+                    <Bot className="w-4 h-4" /> Workflow Demo
+                  </button>
+                  <button
+                    onClick={() => navigate("/agents-flow")}
+                    className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-secondary/10 border border-secondary/20 text-sm font-semibold text-secondary hover:bg-secondary/15 transition-colors duration-200"
+                  >
+                    <Layers className="w-4 h-4" /> Agent Explorer
+                  </button>
+                </motion.div>
               </motion.div>
             </div>
 
@@ -506,7 +516,7 @@ const Index = () => {
               {/* Powered by footer */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="text-center pb-10">
                 <span className="text-[10px] text-muted-foreground font-medium tracking-wide">
-                  Powered by Sirah Digital AI Architecture
+                  Powered by Sirah Digital
                 </span>
               </motion.div>
             </div>

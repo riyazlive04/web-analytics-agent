@@ -760,7 +760,7 @@ const DemoFlow = () => {
                     </button>
                   </div>
                 </div>
-                <div className="mt-6 text-[10px] text-muted-foreground">Powered by Sirah Digital AI Architecture</div>
+                <div className="mt-6 text-[10px] text-muted-foreground">Powered by Sirah Digital</div>
               </motion.div>
             )}
           </AnimatePresence>
